@@ -29,5 +29,9 @@ public class Player : MonoBehaviour
 
             transform.position = transform.position + playerDirection * playerspeed * Time.deltaTime;
         }
+        else{
+
+            playerDirection.Set(0,0,0);
+        }
     }
 }
