@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class DialogueControl : MonoBehaviour
 {
 
@@ -71,6 +72,7 @@ public class DialogueControl : MonoBehaviour
                 index = 0;
                 dialogueObj.SetActive(false);
                 sentences = null;
+                Scene();
             }
         }
     }
@@ -85,6 +87,11 @@ public class DialogueControl : MonoBehaviour
             StartCoroutine(TypeSentence());
             isShowing = true;
         }
+    }
+
+    public void Scene()
+    {
+        SceneManager.LoadScene("MiniGameCervo");
     }
 
 
