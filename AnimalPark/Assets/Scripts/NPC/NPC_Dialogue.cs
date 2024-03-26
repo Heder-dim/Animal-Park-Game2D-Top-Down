@@ -28,6 +28,7 @@ public class NPC_Dialogue : MonoBehaviour
     {
         if (playerHit && !dialogueOpened) 
         {
+            Debug.Log("sdadsdasd");
             DialogueControl.instance.Speech(sentences.ToArray());
             dialogueOpened = true; 
         }
