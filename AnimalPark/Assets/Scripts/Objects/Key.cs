@@ -1,28 +1,59 @@
+// Key.cs
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Key : MonoBehaviour
 {
-    public int keyCount = 0; // Inicializando explicitamente o valor de keyCount
+    private int keyCount = 0;
+    public int num_keys = 0;
+    public GameObject criature;
+    public GameObject obj;
+    public int Code;
+    private Animals_Controller deer;
+
+    void Start()
+    {
+        deer = GetComponent<Animals_Controller>();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Key"))
         {
             Destroy(collision.gameObject);
-            setKey(keyCount + 1);
-            Debug.Log(getKeyCount());
+            keyCount++; // Incrementa a quantidade de chaves
+            Debug.Log("Quantidade de chaves: " + keyCount);
+        }
+        if (collision.gameObject.CompareTag("Object") && keyCount == num_keys)
+        {
+            Debug.Log("O jogador possui chaves o suficiente.");
+            Destroy(collision.gameObject);
+            criature.SetActive(true);
+
+            if(Code == 1) 
+            {
+                deer.V_cervo = true;
+
+
+            }
+        }
+        if (collision.gameObject.name.Equals("NPC 1"))
+        {
+            SceneManager.LoadScene("SampleScene");
         }
     }
-    public void setKey(int Key)
+    // Define a quantidade de chaves
+    public void SetKey(int key)
     {
-        this.keyCount = Key;
+        keyCount = key;
     }
 
-    public int getKeyCount()
+    // Retorna a quantidade de chaves
+    public int GetKeyCount()
     {
-        Debug.Log("enviando key");
         return keyCount;
     }
+
 }

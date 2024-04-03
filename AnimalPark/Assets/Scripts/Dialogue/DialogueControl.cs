@@ -91,7 +91,7 @@ public class DialogueControl : MonoBehaviour
 
     public void Scene()
     {
-        SceneManager.LoadScene("MiniGameCervo");
+        SceneManager.LoadScene("CutSceneMiniGameCervo");
     }
 
 
