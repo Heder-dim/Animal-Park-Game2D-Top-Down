@@ -1,37 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NPC_Dialogue : MonoBehaviour
 {
     public float dialogueRange;
-    public string interactButtonName = "Botao_Interacao";
     public LayerMask playerLayer;
-    private bool dialogueOpened;
 
     public DialogueSettings dialogue;
     bool playerHit;
+
+    public Button dialogueButton;
 
     private List<string> sentences = new List<string>();
 
     private void Start()
     {
         GetNPCInfo();
+
+        dialogueButton.onClick.AddListener(OpenDialogue);
     }
 
     void Update()
     {
-        
-    }
-
-    public void StartDialogue()
-    {
-        if (playerHit && !dialogueOpened) 
-        {
-            Debug.Log("sdadsdasd");
-            DialogueControl.instance.Speech(sentences.ToArray());
-            dialogueOpened = true; 
-        }
+       
     }
 
     void GetNPCInfo()
@@ -48,6 +41,15 @@ public class NPC_Dialogue : MonoBehaviour
         ShowDialogue();
     }
 
+    private void OpenDialogue()
+    {
+        if (playerHit)
+        {
+            DialogueControl.instance.Speech(sentences.ToArray());
+        }
+    }
+
+
     void ShowDialogue()
     {
         Collider2D hit = Physics2D.OverlapCircle(transform.position, dialogueRange, playerLayer);
@@ -58,7 +60,7 @@ public class NPC_Dialogue : MonoBehaviour
         else
         {
             playerHit = false;
-            dialogueOpened = false;
+
         }
     }
 

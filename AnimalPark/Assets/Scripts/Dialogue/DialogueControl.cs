@@ -1,14 +1,13 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 public class DialogueControl : MonoBehaviour
 {
 
     public enum idiom
-    { 
-    
+    {
+
     }
 
     [Header("Components")]
@@ -20,31 +19,31 @@ public class DialogueControl : MonoBehaviour
     [Header("Settings")]
     public float typingSpeed; // velocidade da fala
 
-    //Vari·veis de controle
-    private bool isShowing; // se a janela est· visivel
+    //Vari√°veis de controle
+    private bool isShowing; // se a janela est√° visivel
     private int index; // index das falas
     private string[] sentences;
 
     public static DialogueControl instance;
 
-    //Awake È chamado antes de todos os Starts()
+    //Awake √© chamado antes de todos os Starts()
     private void Awake()
     {
-        instance = this;   
+        instance = this;
     }
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    IEnumerator TypeSentence() 
+    IEnumerator TypeSentence()
     {
         foreach (char letter in sentences[index].ToCharArray())
         {
@@ -54,7 +53,7 @@ public class DialogueControl : MonoBehaviour
     }
 
 
-    //pular pra prÛxima fala
+    //pular pra pr√≥xima fala
     public void NextSentence()
     {
         if (speechText.text == sentences[index])
@@ -72,7 +71,7 @@ public class DialogueControl : MonoBehaviour
                 index = 0;
                 dialogueObj.SetActive(false);
                 sentences = null;
-                Scene();
+                isShowing = false;
             }
         }
     }
@@ -87,11 +86,6 @@ public class DialogueControl : MonoBehaviour
             StartCoroutine(TypeSentence());
             isShowing = true;
         }
-    }
-
-    public void Scene()
-    {
-        SceneManager.LoadScene("CutSceneMiniGameCervo");
     }
 
 

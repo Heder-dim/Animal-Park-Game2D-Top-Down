@@ -10,27 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be05af0bb7cbbf741a5d3aa8c5501398, type: 3}
-  m_Name: NPC_2
+  m_Name: NPC2
   m_EditorClassIdentifier: 
-  actor: {fileID: 32250565846136316, guid: e3dfa6e89e861994499da28bcf5f8cfc, type: 3}
+  actor: {fileID: 7273177057286392361, guid: 02ded7317bcf4ee4483a0293ea25c570, type: 3}
   speakerSprite: {fileID: 0}
-  sentence: 
+  sentence: q
   dialogues:
   - actorName: 
-    profile: {fileID: 1326889582, guid: 1c2bdda050d17a442bc4238f283ed525, type: 3}
+    profile: {fileID: 0}
     sentence:
-      portuguese: Jorge
+      portuguese: Quero ouvir falar
       english: 
       spanish: 
   - actorName: 
-    profile: {fileID: 1326889582, guid: 1c2bdda050d17a442bc4238f283ed525, type: 3}
+    profile: {fileID: 0}
     sentence:
-      portuguese: Jorge
-      english: 
-      spanish: 
-  - actorName: 
-    profile: {fileID: 1326889582, guid: 1c2bdda050d17a442bc4238f283ed525, type: 3}
-    sentence:
-      portuguese: pelo amor de deus jorge e matheus
+      portuguese: Mas abandono
       english: 
       spanish: 

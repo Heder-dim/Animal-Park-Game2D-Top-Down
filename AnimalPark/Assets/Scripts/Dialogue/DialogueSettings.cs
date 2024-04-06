@@ -17,7 +17,7 @@ public class DialogueSettings : ScriptableObject
 }
 
 [System.Serializable]
-public class Sentences 
+public class Sentences
 {
     public string actorName;
     public Sprite profile;
