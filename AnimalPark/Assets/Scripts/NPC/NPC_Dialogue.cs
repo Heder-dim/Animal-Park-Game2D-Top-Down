@@ -15,6 +15,9 @@ public class NPC_Dialogue : MonoBehaviour
 
     private List<string> sentences = new List<string>();
 
+    public GameObject box;
+ 
+
     private void Start()
     {
         GetNPCInfo();
@@ -56,10 +59,12 @@ public class NPC_Dialogue : MonoBehaviour
         if (hit != null)
         {
             playerHit = true;
+            box.SetActive(true);
         }
         else
         {
             playerHit = false;
+            box.SetActive(false);
 
         }
     }

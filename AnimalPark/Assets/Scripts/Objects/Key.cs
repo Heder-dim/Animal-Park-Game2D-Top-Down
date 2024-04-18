@@ -9,7 +9,6 @@ public class Key : MonoBehaviour
     private int keyCount = 0;
     public int num_keys = 0;
     public GameObject criature;
-    public GameObject obj;
     public int Code;
     private Animals_Controller deer;
 
@@ -31,17 +30,8 @@ public class Key : MonoBehaviour
             Debug.Log("O jogador possui chaves o suficiente.");
             Destroy(collision.gameObject);
             criature.SetActive(true);
-
-            if(Code == 1) 
-            {
-                deer.V_cervo = true;
-
-
-            }
-        }
-        if (collision.gameObject.name.Equals("NPC 1"))
-        {
-            SceneManager.LoadScene("SampleScene");
+            GameObject objetoDesativado = GameObject.FindWithTag("Deer");
+            objetoDesativado.SetActive(true);
         }
     }
     // Define a quantidade de chaves

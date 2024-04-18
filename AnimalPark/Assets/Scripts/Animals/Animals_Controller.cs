@@ -16,14 +16,13 @@ public class Animals_Controller : MonoBehaviour
     }
     void Start()
     {
-        if(v_cervo == true)
-        {
-            _cervo.SetActive(true);
-        }
     }
 
     void Update()
     {
-        
+        if (v_cervo == true)
+        {
+            _cervo.SetActive(true);
+        }
     }
 }

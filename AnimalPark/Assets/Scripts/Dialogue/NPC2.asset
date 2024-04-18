@@ -19,12 +19,31 @@ MonoBehaviour:
   - actorName: 
     profile: {fileID: 0}
     sentence:
-      portuguese: Quero ouvir falar
+      portuguese: "Ol\xE1, meu nome \xE9 Paula!!"
       english: 
       spanish: 
   - actorName: 
     profile: {fileID: 0}
     sentence:
-      portuguese: Mas abandono
+      portuguese: Seja bem vindo ao Animal Park!!
+      english: 
+      spanish: 
+  - actorName: 
+    profile: {fileID: 0}
+    sentence:
+      portuguese: "N\xF3s somos um zoologico que atende os mais diversos tipos de
+        animais..."
+      english: 
+      spanish: 
+  - actorName: 
+    profile: {fileID: 0}
+    sentence:
+      portuguese: "Ser\xE1 muito bom trabalhar com voc\xEA."
+      english: 
+      spanish: 
+  - actorName: 
+    profile: {fileID: 0}
+    sentence:
+      portuguese: Ao seguir a estrada ira encontrar com o admistrador do nosso zoologico.
       english: 
       spanish: 

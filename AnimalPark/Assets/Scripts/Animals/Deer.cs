@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class Deer : MonoBehaviour
 {
-    private Verification deer;
+    private Animals_Controller deer;
     
     // Start is called before the first frame update
     void Start()
     {
-        deer = GetComponent<Verification>();
+        deer = GetComponent<Animals_Controller>();
     }
 
     public void sucess()
     {
-        deer._cervo = true;
+        deer.v_cervo = true;
     }
 
     // Update is called once per frame

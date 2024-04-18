@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class DialogueControl : MonoBehaviour
 {
+    
 
     public enum idiom
     {
@@ -23,8 +26,11 @@ public class DialogueControl : MonoBehaviour
     private bool isShowing; // se a janela está visivel
     private int index; // index das falas
     private string[] sentences;
+    public int passScene = 0;
+    public string sceneName;
 
     public static DialogueControl instance;
+
 
     //Awake é chamado antes de todos os Starts()
     private void Awake()
@@ -72,6 +78,7 @@ public class DialogueControl : MonoBehaviour
                 dialogueObj.SetActive(false);
                 sentences = null;
                 isShowing = false;
+
             }
         }
     }
