@@ -9,12 +9,11 @@ public class Key : MonoBehaviour
     private int keyCount = 0;
     public int num_keys = 0;
     public GameObject criature;
-    public int Code;
-    private Animals_Controller deer;
+    public int minigameNum;
+
 
     void Start()
     {
-        deer = GetComponent<Animals_Controller>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -22,7 +21,7 @@ public class Key : MonoBehaviour
         if (collision.gameObject.CompareTag("Key"))
         {
             Destroy(collision.gameObject);
-            keyCount++; // Incrementa a quantidade de chaves
+            keyCount++; 
             Debug.Log("Quantidade de chaves: " + keyCount);
         }
         if (collision.gameObject.CompareTag("Object") && keyCount == num_keys)
@@ -30,8 +29,15 @@ public class Key : MonoBehaviour
             Debug.Log("O jogador possui chaves o suficiente.");
             Destroy(collision.gameObject);
             criature.SetActive(true);
-            GameObject objetoDesativado = GameObject.FindWithTag("Deer");
-            objetoDesativado.SetActive(true);
+            switch (minigameNum)
+            {
+                case 0:
+                    PlayerPrefs.SetInt("Deer", 1);
+                    break;
+                case 1:
+                    PlayerPrefs.SetInt("ounce", 1);
+                    break;
+            }
         }
     }
     // Define a quantidade de chaves
