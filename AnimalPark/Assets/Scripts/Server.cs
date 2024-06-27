@@ -12,7 +12,7 @@ public class Server : MonoBehaviour
     private Thread tcpListenerThread;
     private TcpClient connectedTcpClient;
 
-    public PlayerS player; 
+    public PlayerS player;
 
     void Start()
     {
@@ -48,10 +48,13 @@ public class Server : MonoBehaviour
                             string clientMessage = Encoding.ASCII.GetString(incomingData);
                             Debug.Log("Client message received as: " + clientMessage);
 
-                            // Parse the message and update the player direction
                             string[] parts = clientMessage.Split(',');
                             if (parts.Length == 2 && float.TryParse(parts[0], out float x) && float.TryParse(parts[1], out float y))
                             {
+                                // Normaliza os valores do joystick para garantir que eles estejam entre -1 e 1
+                                x = Mathf.Clamp(x, -1.0f, 1.0f);
+                                y = Mathf.Clamp(y, -1.0f, 1.0f);
+
                                 Vector3 direction = new Vector3(x, y, 0f);
                                 player.direction = direction;
                             }
@@ -79,18 +82,6 @@ public class Server : MonoBehaviour
         catch (Exception exception)
         {
             Debug.LogError("Exception: " + exception.Message);
-        }
-    }
-
-    private void OnApplicationQuit()
-    {
-        if (tcpListener != null)
-        {
-            tcpListener.Stop();
-        }
-        if (tcpListenerThread != null)
-        {
-            tcpListenerThread.Abort();
         }
     }
 }
