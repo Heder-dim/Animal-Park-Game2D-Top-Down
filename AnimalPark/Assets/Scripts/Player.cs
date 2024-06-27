@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float playerSpeed; // Define a default speed
+    public float playerspeed;
 
     private Vector3 playerDirection;
-
+    private Joystick joystick;
     public Vector3 direction
     {
         get { return playerDirection; }
         set { playerDirection = value; }
     }
+    void Start()
+    {
+        joystick = FindObjectOfType<Joystick>();
+    }
 
     void Update()
     {
-        // Update the player position based on the direction and speed
-        transform.position += playerDirection * playerSpeed * Time.deltaTime;
+        playerDirection = new Vector3(joystick.joystickVec.x, joystick.joystickVec.y, 0f);
+
+        transform.position += playerDirection * playerspeed * Time.deltaTime;
     }
 }

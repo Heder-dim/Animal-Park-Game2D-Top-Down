@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CutScenes/CutSceneCervoVolta.unity
     guid: 99aa12975bb8779479d6241411702354
+  - enabled: 1
+    path: Assets/Scenes/Config.unity
+    guid: 555a8354a2e76cd4297e96d205d66697
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: d95d677799924d541aede50f148773cd
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 8a59950435907244c880ec4fe74f51d1, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 0e1cd01a1a9aa1e40966c8512fa50e79, type: 2}

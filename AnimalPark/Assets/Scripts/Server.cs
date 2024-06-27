@@ -12,7 +12,7 @@ public class Server : MonoBehaviour
     private Thread tcpListenerThread;
     private TcpClient connectedTcpClient;
 
-    public Player player; // Reference to the player object
+    public PlayerS player; 
 
     void Start()
     {
